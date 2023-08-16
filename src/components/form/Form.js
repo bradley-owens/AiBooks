@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./Form.css";
 const Form = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastname] = useState("");
@@ -46,7 +46,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Get More Details about AI-Books</h1>
       <p>
         Fill out the form below, and our team will provide you with
@@ -54,21 +54,24 @@ const Form = () => {
         bookkeeping process.
       </p>
       <form onSubmit={submitFormHandler}>
+        <label>First Name</label>
         <input
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          placeholder="First Name"
+          placeholder="Enter your first name"
         />
+        <label>Last Name</label>
         <input
           value={lastName}
           onChange={(e) => setLastname(e.target.value)}
-          placeholder="Last Name"
+          placeholder="Enter your last name"
         />
+        <label>Email Address</label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
-          placeholder="Email"
+          placeholder="Enter your email"
         />
         <button type="submit">Submit</button>
         {formError && <p style={{ color: "red" }}>{formError}</p>}

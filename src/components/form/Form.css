@@ -1,0 +1,13 @@
+@import '../../index.css';
+
+.container {
+width: 400px;
+color:var(--text-secondary);
+background-color: var(--form-bg);
+box-shadow:0px 0px 12px var(--text-primary);
+}
+
+form button {
+color:var(--text-secondary);
+background-color: var(--accent);
+}

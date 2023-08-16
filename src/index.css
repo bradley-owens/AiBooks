@@ -1,0 +1,37 @@
+:root {
+    --background: #EAEAEA;
+    --text-primary: #343A40;
+    --text-secondary: #EAEAEA;
+    --accent: #DD6E42;
+    --border: #E8DAB2;
+    --form-bg:#4F6D7A;
+  
+
+}
+
+[data-theme = 'dark'] {
+    --background:#212529; 
+    --text-primary: #EAEAEA;
+    --text-secondary: #CED4DA;
+    --accent: #DD6E42;
+    --border: #DD6E42;
+    --form-bg:#343A40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    background-color: var(--background);
+    color: var(--text-primary);
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
