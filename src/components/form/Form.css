@@ -1,13 +1,71 @@
-@import '../../index.css';
-
 .container {
-width: 400px;
-color:var(--text-secondary);
-background-color: var(--form-bg);
-box-shadow:0px 0px 12px var(--text-primary);
+    width: 400px;
+    height: 390px;
+    padding: 1.5rem 1rem;
+    color:var(--text-primary);
+    background-color: var(--background);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(52, 58, 64, 0.19);
+    border-radius: 10px;
 }
 
+.container.open {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out;
+  }
+
+.container h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.container p {
+    font-size: 0.9rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem 0.5rem; 
+}
+
+input {
+    text-align: center;
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 0px;
+    font-size: 1rem;
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+input {
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+  
+  input:focus {
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+
+
 form button {
-color:var(--text-secondary);
-background-color: var(--accent);
+    display: flex;
+    justify-content: center;
+    color:var(--text-secondary);
+    background-color: var(--accent-primary);
+    border: none;
+    padding: 0.5rem 2.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    margin: 0 auto;
 }

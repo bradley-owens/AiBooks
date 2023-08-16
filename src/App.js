@@ -1,7 +1,8 @@
 import "./index.css";
-import Form from "./components/form/Form";
+import Hero from "./components/hero/Hero";
 import ThemeToggle from "./components/themeToggle/ThemeToggle";
 import useLocalStorage from "use-local-storage";
+import Navigation from "./components/navigation/Navigation";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
@@ -11,9 +12,8 @@ function App() {
   };
   return (
     <div className="app" data-theme={theme}>
-      <h1>AI Books</h1>
-      <Form />
-      <ThemeToggle switchTheme={switchTheme} />
+      <Navigation switchTheme={switchTheme} />
+      <Hero />
     </div>
   );
 }
