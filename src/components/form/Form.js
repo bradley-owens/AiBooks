@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Form.css";
-const Form = ({ openState }) => {
+const Form = ({ openState, popupHandler }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -41,7 +41,7 @@ const Form = ({ openState }) => {
     if (errors.length > 0) {
       setFormError(errors.join(" "));
     } else {
-      setFormError("Succesfully Validated");
+      popupHandler(true, true, firstName);
       setFirstName("");
       setLastname("");
       setEmail("");
@@ -52,12 +52,16 @@ const Form = ({ openState }) => {
     if (openState) {
       setTimeout(() => {
         document.querySelector(".container").classList.add("open");
-      }, 100);
+      }, 300);
+    } else {
+      setTimeout(() => {
+        document.querySelector(".container").classList.remove("open");
+      }, 10);
     }
   }, [openState]);
 
   return (
-    <div className="container">
+    <div className={"container"}>
       <h1>Learn More about AI-Books</h1>
       <form onSubmit={submitFormHandler}>
         <label>First Name</label>

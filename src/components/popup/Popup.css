@@ -1,0 +1,22 @@
+.popup {
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.popup.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    top: 15rem;
+    left:30rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform 0.8s ease-in-out;
+}

@@ -8,6 +8,10 @@
     
 }
 
+.content-container {
+    position: relative;
+}
+
 .content {
     width: 55%;
     display: flex;
@@ -15,7 +19,7 @@
     justify-content: center;
     gap: 1.5rem;
     transform: translateX(200px);
-    transition: transform 0.7s ease-in-out;
+    transition: transform 0.8s ease-in-out;
 }
 
 .slide {

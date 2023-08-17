@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import Form from "../form/Form";
-import heroImg from "../../images/hero.jpg";
 import "./Hero.css";
+import Popup from "../popup/Popup";
 
 const Hero = () => {
   const [openState, setOpenState] = useState(false);
+  const [popupState, setPopupState] = useState(false);
+  const [formValidState, setFormValidState] = useState(false);
+  const [firstName, setFirstName] = useState("test");
 
-  const openFormHandler = () => {
-    setOpenState(true);
+  const popupHandler = (state, valid, firstName) => {
+    setPopupState(state);
+    setFormValidState(valid);
+    setFirstName(firstName);
   };
   return (
     <main className="main-container">
+      <Popup
+        firstName={firstName}
+        popupState={popupState}
+        formValidState={formValidState}
+      />
+
       <div className={`content ${openState ? "slide" : ""}`}>
         <h1>
           Unlock the <span>Power of AI</span>
@@ -22,26 +33,27 @@ const Hero = () => {
           business insights.
         </p>
         <div className="button-container">
-          <button onClick={openFormHandler} className="primary-button">
+          <button
+            onClick={() => {
+              setOpenState(true);
+              popupHandler(false);
+            }}
+            className="primary-button"
+          >
             Tell me more!
           </button>
-          <button className="secondary-button">Not interested</button>
+          <button
+            onClick={() => {
+              setOpenState(false);
+              popupHandler(true);
+            }}
+            className="secondary-button"
+          >
+            Not interested
+          </button>
         </div>
       </div>
-
-      <Form openState={openState} />
-      {/* <img
-        style={{
-          position: "absolute",
-          top: 200,
-          right: 90,
-          width: "20rem",
-          height: "20rem",
-          borderRadius: "1000px",
-        }}
-        src={heroImg}
-        alt="ai image"
-      /> */}
+      <Form openState={openState} popupHandler={popupHandler} />
     </main>
   );
 };

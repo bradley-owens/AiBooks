@@ -20,9 +20,7 @@ const Navigation = ({ switchTheme }) => {
         <a href="#">How it works</a>
         <a href="#">Bookkeeping</a>
         <a href="#">Pricing</a>
-        <a href="#" id="sign-up">
-          Sign up
-        </a>
+        <a href="#">Sign up</a>
       </div>
     </nav>
   );
