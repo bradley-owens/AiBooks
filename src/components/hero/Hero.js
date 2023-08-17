@@ -5,7 +5,7 @@ import Popup from "../popup/Popup";
 
 const Hero = () => {
   const [openState, setOpenState] = useState(false);
-  const [popupState, setPopupState] = useState();
+  const [popupState, setPopupState] = useState("entry");
   const [formValidState, setFormValidState] = useState(false);
   const [firstName, setFirstName] = useState("test");
 
@@ -36,7 +36,7 @@ const Hero = () => {
           <button
             onClick={() => {
               setOpenState(true);
-              popupHandler(false);
+              popupHandler("false");
             }}
             className="primary-button"
           >

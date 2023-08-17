@@ -22,6 +22,10 @@ const Navigation = ({ switchTheme }) => {
         <a href="#">Pricing</a>
         <a href="#">Sign up</a>
       </div>
+
+      <div className="mobile-nav">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </nav>
   );
 };

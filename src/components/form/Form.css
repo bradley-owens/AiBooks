@@ -1,14 +1,15 @@
 .container {
     width: 30%;
-    height: 60%;
+    height: fit-content;
     padding: 1.5rem 1rem;
     color:var(--text-primary);
     background-color: var(--background);
     opacity: 0;
     transform: translateX(100px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    box-shadow: 0px 0px 10px rgba(52, 58, 64, 0.19);
+    box-shadow: 0px 0px 10px rgba(221, 110, 66, 0.514);
     border-radius: 10px;
+    /* border: 1px solid var(--accent-secondary); */
 }
 
 .container.open {
@@ -70,12 +71,55 @@ form button {
     margin: 0 auto;
 }
 
-
-
+@media(max-width:1265px) {
+    .container h1 {
+        text-align: center;
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+    }
+}
 @media(max-width:974px) {
     .container {
         width: 60%;
         height: 55%;
+        padding: 1rem 0.5rem;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        box-shadow: 0px 0px 10px rgba(52, 58, 64, 0.19);
+    }
+    
+    .container.open {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .container h1 {
+        text-align: center;
+        font-size: 1.1rem;
+        padding-bottom: 1rem;
+    }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+        gap: 1.2rem;
+        padding: 1rem 0.5rem; 
+    }
+
+      input {
+        padding: 0.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:624px) {
+    .container {
+        width: 80%;
+        height: 50%;
         padding: 1rem 0.5rem;
         opacity: 0;
         transform: translateY(100px);
@@ -94,8 +138,8 @@ form button {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: start;
-        gap: 1.2rem;
-        padding: 1rem 0.5rem; 
+        gap: 1rem;
+        padding: 0.5rem 0.5rem; 
     }
 
       input {

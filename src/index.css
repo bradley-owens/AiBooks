@@ -43,13 +43,15 @@
 }
 
 .app {
+    
     position: relative;
-    width: 100vw;
-    background-color: var(--background);
+    /* width: 100vw;
+    background-color: var(--background); */
+    height: 100vh;
     color: var(--text-primary);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     font-size: 0.8rem;
     transition: all 0.3s;
 }

@@ -42,3 +42,52 @@
         transition: transform 0.8s ease-in-out;
     }
  }
+
+
+ @media(max-width:734px) {
+    .popup {
+        position: absolute;
+        top: 15rem;
+        left: 30%;
+        transition: transform 0.8s ease-in-out;
+    }
+    
+    
+    .popup.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        font-size: 0.7rem;
+        position: absolute;
+        top: 12rem;
+        left:6.5rem;
+        opacity: 1;
+        transform: translateY(0px);
+        transition: transform 0.8s ease-in-out;
+    }
+ }
+
+
+ @media(max-width:490px) {
+    .popup {
+        position: absolute;
+        top: 15rem;
+        left: 30%;
+        transition: transform 0.8s ease-in-out;
+    }
+    
+    .popup.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        font-size: 0.6rem;
+        position: absolute;
+        top: 17rem;
+        left:2rem;
+        opacity: 1;
+        transform: translateY(0px);
+        transition: transform 0.8s ease-in-out;
+    }
+ }

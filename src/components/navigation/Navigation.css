@@ -33,5 +33,11 @@ transition: all 0.2s;
 }
 
 
+@media(max-width:974px) {
+    .links-container {
+        display: none;
+    }
+}
+
 
 
