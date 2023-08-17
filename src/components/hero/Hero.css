@@ -5,7 +5,7 @@
     gap: 2rem;
     width: 100vw;
     height: 730px;
-    
+    padding: 1rem;
 }
 
 .content-container {
@@ -13,12 +13,12 @@
 }
 
 .content {
-    width: 55%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
-    transform: translateX(200px);
+    transform: translateX(180px);
     transition: transform 0.8s ease-in-out;
 }
 
@@ -72,3 +72,83 @@ button:hover {
     border-radius: 10px;
     border: none;
 }
+
+@media(max-width:1255px) {
+    .main-container { 
+        gap: 0rem;
+    }
+    .content h1 {
+        font-size: 3rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .button-container {
+        gap: 1rem;
+    }
+    
+    .content {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        transform: translateX(160px);
+        transition: transform 0.8s ease-in-out;
+    }
+    
+    .slide {
+        transform: translateX(-30px);
+      }
+}
+
+
+@media(max-width:974px) {
+    .main-container { 
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+    
+    .content {
+        width: 80%;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(150px);
+        transition: transform 0.8s ease-in-out;
+    }
+    
+    .slide {
+        transform: translateY(-30px);
+      }
+
+    .content p {
+        text-align: center;
+    }
+}
+
+@media(max-width:708px) {
+
+    .content {
+        width: 90%;
+        gap: 1.5rem;
+        transform: translateY(140px);
+        transition: transform 0.8s ease-in-out;
+    }
+    
+    .content h1 {
+        font-size: 2.6rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .slide {
+        transform: translateY(-30px);
+      }
+}
+
+

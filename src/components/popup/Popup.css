@@ -20,3 +20,25 @@
     transform: translateY(0px);
     transition: transform 0.8s ease-in-out;
 }
+
+@media(max-width:974px) {
+    .popup {
+        position: absolute;
+        top: 15rem;
+        left: 30%;
+    }
+    
+    
+    .popup.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: absolute;
+        top: 15rem;
+        left:20rem;
+        opacity: 1;
+        transform: translateY(0px);
+        transition: transform 0.8s ease-in-out;
+    }
+ }

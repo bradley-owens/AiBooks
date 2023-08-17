@@ -5,7 +5,7 @@ import Popup from "../popup/Popup";
 
 const Hero = () => {
   const [openState, setOpenState] = useState(false);
-  const [popupState, setPopupState] = useState(false);
+  const [popupState, setPopupState] = useState();
   const [formValidState, setFormValidState] = useState(false);
   const [firstName, setFirstName] = useState("test");
 

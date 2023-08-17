@@ -44,6 +44,7 @@
 
 .app {
     position: relative;
+    width: 100vw;
     background-color: var(--background);
     color: var(--text-primary);
     display: flex;
