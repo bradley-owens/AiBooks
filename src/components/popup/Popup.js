@@ -3,6 +3,12 @@ import "./Popup.css";
 
 const Popup = ({ popupState, formValidState, firstName, openState }) => {
   const isMobileScreen = window.innerWidth <= 970;
+
+  const closePopup = () => {
+    document.querySelector(".popup").classList.remove("open");
+    document.querySelector(".popup").classList.remove("mobile");
+    document.querySelector(".popup").classList.remove("mobile-form");
+  };
   useEffect(() => {
     let popupTimeout;
     const popupElement = document.querySelector(".popup");
@@ -19,7 +25,7 @@ const Popup = ({ popupState, formValidState, firstName, openState }) => {
 
       popupTimeout = setTimeout(() => {
         closePopup();
-      }, 30000000);
+      }, 3000);
     } else {
       mobilePopups.forEach((popup) => {
         popup.classList.remove("mobile");
@@ -37,64 +43,60 @@ const Popup = ({ popupState, formValidState, firstName, openState }) => {
     };
   }, [popupState, formValidState, isMobileScreen]);
 
-  const closePopup = () => {
-    document.querySelector(".popup").classList.remove("open");
-    document.querySelector(".popup").classList.remove("mobile");
-    document.querySelector(".popup").classList.remove("mobile-form");
-  };
-
   return (
     <React.Fragment>
-      <div>
-        {popupState === "entry" && (
-          <div className="popup" data-mobile>
-            <h2>
-              {popupState === "entry" && "Hi, Welcome to Intuits AI Books"}
-            </h2>
-            <i
-              style={{ cursor: "pointer" }}
-              onClick={closePopup}
-              className="fa-solid fa-x fa-lg"
-            ></i>
-          </div>
-        )}
-        {popupState === "not-interested" && (
-          <div className="popup" data-mobile>
-            <h2>"Can't win 'em all, maybe next time!"</h2>
-            <i
-              style={{ cursor: "pointer" }}
-              onClick={closePopup}
-              className="fa-solid fa-x fa-lg"
-            ></i>
-          </div>
-        )}
+      {popupState === "entry" && (
+        <div
+          className="popup"
+          data-mobile
+          onClick={closePopup}
+          style={{ cursor: "pointer" }}
+        >
+          <h2>Hi, Welcome to Intuits AI Books</h2>
+          <span className="close-button">X</span>
+        </div>
+      )}
 
-        {openState && !formValidState && (
-          <div className="popup" data-mobile-form>
-            <h2>Fill out your details and lets get started!</h2>
-            <i
-              style={{ cursor: "pointer" }}
-              onClick={closePopup}
-              className="fa-solid fa-x fa-lg"
-            ></i>
-          </div>
-        )}
+      {popupState === "not-interested" && (
+        <div
+          className="popup"
+          data-mobile
+          onClick={closePopup}
+          style={{ cursor: "pointer" }}
+        >
+          <h2>Can't win 'em all, maybe next time!</h2>
+          <span className="close-button">X</span>
+        </div>
+      )}
 
-        {formValidState && (
-          <div className="popup" data-mobile-form>
-            <h2>
-              {`Great to have you onboard, ${
-                firstName.charAt(0).toUpperCase() + firstName.slice(1)
-              }!`}
-            </h2>
-            <i
-              style={{ cursor: "pointer" }}
-              onClick={closePopup}
-              className="fa-solid fa-x fa-lg"
-            ></i>
-          </div>
-        )}
-      </div>
+      {openState && !formValidState && (
+        <div className="popup" data-mobile-form>
+          <h2>Fill out your details and lets get started!</h2>
+          <i
+            style={{ cursor: "pointer" }}
+            onClick={(e) => {
+              e.stopPropagation();
+              closePopup();
+            }}
+            className="fa-solid fa-x fa-lg"
+          ></i>
+        </div>
+      )}
+
+      {formValidState && (
+        <div className="popup" data-mobile-form>
+          <h2>
+            {`Great to have you onboard, ${
+              firstName.charAt(0).toUpperCase() + firstName.slice(1)
+            }!`}
+          </h2>
+          <i
+            style={{ cursor: "pointer" }}
+            onClick={closePopup}
+            className="fa-solid fa-x fa-lg"
+          ></i>
+        </div>
+      )}
     </React.Fragment>
   );
 };

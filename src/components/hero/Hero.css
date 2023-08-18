@@ -6,7 +6,7 @@
   gap: 2rem;
   max-width: 100vw;
   /* height: 100%; */
-  height: 700px;
+  height: 680px;
   padding: 1rem;
 }
 
@@ -40,16 +40,8 @@
   transform: translateY(0px);
   transition: all 1s;
 }
-/* .hero-blob {
-  z-index: 0;
-  width: 12rem;
-  position: absolute;
-  top: 1rem;
-  left: 4rem;
-} */
 
 .content {
-  /* margin-right: -40rem; */
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -211,6 +203,7 @@ button:hover {
     gap: 3rem;
     justify-content: flex-start;
     align-items: center;
+    /* margin-top: -10rem; */
   }
   .hero-line {
     width: 25rem;
@@ -413,41 +406,6 @@ button:hover {
     transform: translateY(-30px);
   }
 }
-
-/* @media (max-width: 477px) {
-  .hidden {
-    position: absolute;
-    top: auto;
-    bottom: -18rem;
-    right: -3rem;
-    width: 28rem;
-    transform: translateY(-20px);
-    transition: all 1s;
-  }
-
-  .hero-line {
-    width: 23rem;
-    position: absolute;
-    top: 15rem;
-    right: 2rem;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 1s;
-    transform: rotate(-240deg);
-    opacity: 0.2;
-  }
-
-  .hero-img {
-    position: absolute;
-    top: auto;
-    bottom: -18rem;
-    right: -3rem;
-    width: 28rem;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 1s;
-  }
-} */
 
 @media (max-width: 407px) {
   .content {

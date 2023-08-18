@@ -3,7 +3,6 @@ import Form from "../form/Form";
 import "./Hero.css";
 import Popup from "../popup/Popup";
 import heroImg from "../../images/hero-img.png";
-import heroBlob from "../../images/blob.png";
 import dottedLine from "../../images/dotted-line.png";
 
 const Hero = () => {
@@ -17,6 +16,7 @@ const Hero = () => {
     setFormValidState(valid);
     setFirstName(firstName);
   };
+
   return (
     <main className="main-container">
       <Popup
@@ -26,7 +26,6 @@ const Hero = () => {
         openState={openState}
       />
 
-      {/* <img className="hero-blob" src={heroBlob} alt="hero blob" /> */}
       <img
         className={openState ? "hidden" : "hero-line"}
         src={dottedLine}

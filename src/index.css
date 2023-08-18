@@ -40,14 +40,13 @@
 
 body {
   background-color: var(--background);
+  /* border: 15px solid var(--accent-primary);
+  border-bottom: none; */
 }
 
 .app {
-  /* position: relative; */
-  /* width: 100vw; */
+  /* height: 100vh; */
   background-color: var(--background);
-  /* height: 700px; */
   color: var(--text-primary);
   font-size: 0.8rem;
-  transition: all 0.3s;
 }

@@ -1,32 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Navigation.css";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 
 const Navigation = ({ switchTheme }) => {
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive-nav");
+  };
   return (
-    <nav>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "3rem",
-        }}
-      >
+    <header>
+      <div className="logo-container">
         <h2>AI Books</h2>
         <ThemeToggle switchTheme={switchTheme} />
       </div>
-      <div className="links-container">
+      <nav ref={navRef}>
         <a href="#">How it works</a>
         <a href="#">Bookkeeping</a>
         <a href="#">Pricing</a>
         <a href="#">Sign up</a>
-      </div>
+        <button className="nav-button nav-close-button" onClick={showNavBar}>
+          <i style={{ cursor: "pointer" }} className="fa-solid fa-x fa-lg"></i>
+        </button>
+      </nav>
 
-      <div className="mobile-nav">
+      <button className="nav-button" onClick={showNavBar}>
         <i class="fa-solid fa-bars"></i>
-      </div>
-    </nav>
+      </button>
+    </header>
   );
 };
 
