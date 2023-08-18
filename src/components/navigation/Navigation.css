@@ -1,43 +1,50 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2.5rem 7rem;
-    color: var(--text-primary);
+  /* position: fixed;
+  top: 0;
+  right: 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 7rem;
+  color: var(--text-primary);
 }
 
 nav h2 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .links-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }
 
- a {
-    color:var(--text-primary);
-    text-decoration: none;
-    border: none;
-    font-size: 1rem;
-    padding-bottom: 0.3rem;
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  padding-bottom: 0.3rem;
 }
-
 
 a:hover {
-cursor: pointer;
-border-bottom: 1px solid var(--text-primary);
-transition: all 0.2s;
+  cursor: pointer;
+  border-bottom: 1px solid var(--text-primary);
+  transition: all 0.2s;
 }
 
-
-@media(max-width:974px) {
-    .links-container {
-        display: none;
-    }
+.mobile-nav {
+  display: none;
 }
 
+@media (max-width: 974px) {
+  .links-container {
+    display: none;
+  }
 
-
+  .mobile-nav {
+    display: block;
+    font-size: 1.6rem;
+  }
+}

@@ -1,14 +1,11 @@
 :root {
-    
-    --background: #EAEAEA;
-    --text-primary: #343A40;
-    --text-secondary: #F8F9FA;
-    --accent-primary: #DD6E42;
-    --accent-secondary: #4F6D7A;
-    --border: #E8DAB2;
-    --form-bg:#4F6D7A;
-  
-
+  --background: #eaeaea;
+  --text-primary: #343a40;
+  --text-secondary: #f8f9fa;
+  --accent-primary: #dd6e42;
+  --accent-secondary: #4f6d7a;
+  --border: #e8dab2;
+  --form-bg: #4f6d7a;
 }
 /* 
 :root {
@@ -24,36 +21,33 @@
 
 } */
 
-[data-theme = 'dark'] {
-    --background:#212529; 
-    --text-primary: #EAEAEA;
-    --text-secondary: #CED4DA;
-    --accent-primary: #DD6E42;
-    --accent-secondary: #343A40;
-    --border: #DD6E42;
-    --form-bg:#343A40;
+[data-theme="dark"] {
+  --background: #212529;
+  --text-primary: #eaeaea;
+  --text-secondary: #ced4da;
+  --accent-primary: #dd6e42;
+  --accent-secondary: #343a40;
+  --border: #dd6e42;
+  --form-bg: #343a40;
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: var(--background);
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
 }
 
 .app {
-    
-    position: relative;
-    /* width: 100vw;
-    background-color: var(--background); */
-    height: 100vh;
-    color: var(--text-primary);
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    font-size: 0.8rem;
-    transition: all 0.3s;
+  /* position: relative; */
+  /* width: 100vw; */
+  background-color: var(--background);
+  /* height: 700px; */
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  transition: all 0.3s;
 }
-
-

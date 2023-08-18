@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Form from "../form/Form";
 import "./Hero.css";
 import Popup from "../popup/Popup";
+import heroImg from "../../images/hero-img.png";
+import heroBlob from "../../images/blob.png";
+import dottedLine from "../../images/dotted-line.png";
 
 const Hero = () => {
   const [openState, setOpenState] = useState(false);
   const [popupState, setPopupState] = useState("entry");
   const [formValidState, setFormValidState] = useState(false);
-  const [firstName, setFirstName] = useState("test");
+  const [firstName, setFirstName] = useState("");
 
   const popupHandler = (state, valid, firstName) => {
     setPopupState(state);
@@ -20,6 +23,20 @@ const Hero = () => {
         firstName={firstName}
         popupState={popupState}
         formValidState={formValidState}
+        openState={openState}
+      />
+
+      {/* <img className="hero-blob" src={heroBlob} alt="hero blob" /> */}
+      <img
+        className={openState ? "hidden" : "hero-line"}
+        src={dottedLine}
+        alt="hero line"
+      />
+
+      <img
+        className={openState ? "hidden" : "hero-img"}
+        src={heroImg}
+        alt="AI user"
       />
 
       <div className={`content ${openState ? "slide" : ""}`}>
@@ -36,7 +53,7 @@ const Hero = () => {
           <button
             onClick={() => {
               setOpenState(true);
-              popupHandler("false");
+              popupHandler(true);
             }}
             className="primary-button"
           >
@@ -45,7 +62,7 @@ const Hero = () => {
           <button
             onClick={() => {
               setOpenState(false);
-              popupHandler(true);
+              popupHandler("not-interested");
             }}
             className="secondary-button"
           >

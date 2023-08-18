@@ -39,7 +39,7 @@ const Form = ({ openState, popupHandler }) => {
       .map((rule) => rule.message);
 
     if (errors.length > 0) {
-      setFormError(errors.join(" "));
+      setFormError(errors.join(" -- "));
     } else {
       popupHandler(true, true, firstName);
       setFirstName("");
@@ -78,7 +78,11 @@ const Form = ({ openState, popupHandler }) => {
           type="email"
         />
         <button type="submit">Submit</button>
-        {formError && <p style={{ color: "red" }}>{formError}</p>}
+        {formError && (
+          <p style={{ color: "red", textAlign: "center", fontSize: "0.7rem" }}>
+            {formError}
+          </p>
+        )}
       </form>
     </div>
   );
