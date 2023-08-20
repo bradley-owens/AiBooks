@@ -1,8 +1,13 @@
 import React, { useRef } from "react";
 import "./Navigation.css";
 import ThemeToggle from "../themeToggle/ThemeToggle";
-
+// import { useAppSelector } from "../../hooks/useAppSelector";
+// import { useDispatch } from "react-redux";
+// import { useActions } from "../../hooks/useActions";
 const Navigation = ({ switchTheme }) => {
+  // const dispatch = useDispatch();
+  // const { formOpenState } = useAppSelector((state) => state.website);
+  // const { formOpenHandler, setPopupType } = useActions();
   const navRef = useRef();
 
   const showNavBar = () => {
@@ -19,6 +24,15 @@ const Navigation = ({ switchTheme }) => {
         <a href="#">Bookkeeping</a>
         <a href="#">Pricing</a>
         <a href="#">Sign up</a>
+        {/* <button
+          onClick={() => {
+            dispatch(formOpenHandler(true));
+            dispatch(setPopupType("interested"));
+          }}
+          className="primary-button"
+        >
+          Sign up!
+        </button> */}
         <button className="nav-button nav-close-button" onClick={showNavBar}>
           <i style={{ cursor: "pointer" }} className="fa-solid fa-x fa-lg"></i>
         </button>

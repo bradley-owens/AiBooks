@@ -168,7 +168,7 @@ const Popup = () => {
       popupTimeout = setTimeout(() => {
         setShowPopup(false);
         dispatch(setPopupType(null));
-      }, 4000000);
+      }, 3000);
     }
 
     return () => {

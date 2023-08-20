@@ -47,5 +47,5 @@
   color: var(--text-primary);
   background: var(--background);
   font-size: 0.8rem;
-  transition: 0.5 all;
+  transition: 0.5s all;
 }
