@@ -8,7 +8,7 @@
   left: 28rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  transition: all 0.5s ease-out;
 }
 
 .popup.open {
@@ -21,7 +21,7 @@
   left: 28rem;
   opacity: 1;
   transform: translateY(0px);
-  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  transition: all 0.5s ease-out;
 }
 
 @media (max-width: 1302px) {
@@ -110,8 +110,8 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    top: 17rem;
-    left: 13rem;
+    top: 20rem;
+    left: 28%;
     /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
@@ -127,6 +127,45 @@
       opacity: 0;
       transform: translateY(10px);
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .popup {
+    font-size: 0.7rem;
+    position: absolute;
+    top: 8rem;
+    left: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px);
+    transition: all 0.5s;
+    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
+  }
+
+  .mobile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    top: 8rem;
+    left: 13rem;
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+
+  .mobile-form {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    top: 20rem;
+    left: 26%;
+
+    /* opacity: 1; */
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
 }
 
@@ -161,8 +200,9 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    top: 17rem;
-    left: 13rem;
+    top: 20rem;
+    left: 25%;
+
     /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
@@ -198,8 +238,9 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    top: 19rem;
-    left: 5rem;
+    left: 21%;
+    top: 20rem;
+
     /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
@@ -227,6 +268,7 @@
     gap: 0.5rem;
     top: 8rem;
     left: 4rem;
+
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
 
@@ -236,8 +278,128 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    top: 19rem;
-    left: 3.5rem;
+    left: 14%;
+    top: 20rem;
+
+    /* opacity: 1; */
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+}
+
+@media (max-width: 426px) {
+  .popup {
+    position: absolute;
+    font-size: 0.6rem;
+    top: 8rem;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px);
+    transition: all 0.5s;
+    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
+  }
+
+  .mobile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    top: 8rem;
+    left: 4rem;
+
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+
+  .mobile-form {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    left: 14%;
+    top: 20rem;
+
+    /* opacity: 1; */
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+}
+
+@media (max-width: 407px) {
+  .popup {
+    position: absolute;
+    font-size: 0.6rem;
+    top: 8rem;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px);
+    transition: all 0.5s;
+    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
+  }
+
+  .mobile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    top: 8rem;
+    left: 4rem;
+
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+
+  .mobile-form {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    left: 14%;
+    top: 16.5rem;
+
+    /* opacity: 1; */
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+}
+@media (max-width: 370px) {
+  .popup {
+    position: absolute;
+    font-size: 0.5rem;
+    top: 8rem;
+    left: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px);
+    transition: all 0.5s;
+    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
+  }
+
+  .mobile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    top: 8rem;
+    left: 2.5rem;
+
+    animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+
+  .mobile-form {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    left: 14%;
+    top: 15rem;
+
     /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }

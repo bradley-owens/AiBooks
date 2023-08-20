@@ -1,44 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "../form/Form";
-import "./Hero.css";
 import Popup from "../popup/Popup";
-import heroImg from "../../images/hero-img.png";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useDispatch } from "react-redux";
+import { useActions } from "../../hooks/useActions";
+
+import "./Hero.css";
+import heroImg2 from "../../images/hero-img.png";
 import dottedLine from "../../images/dotted-line.png";
 
 const Hero = () => {
-  const [openState, setOpenState] = useState(false);
-  const [popupState, setPopupState] = useState("entry");
-  const [formValidState, setFormValidState] = useState(false);
-  const [firstName, setFirstName] = useState("");
-
-  const popupHandler = (state, valid, firstName) => {
-    setPopupState(state);
-    setFormValidState(valid);
-    setFirstName(firstName);
-  };
+  const dispatch = useDispatch();
+  const { formOpenState } = useAppSelector((state) => state.website);
+  const { formOpenHandler, setPopupType } = useActions();
+  // const formOpenState = useSelector((state) => state.website.formOpenState);
 
   return (
     <main className="main-container">
-      <Popup
-        firstName={firstName}
-        popupState={popupState}
-        formValidState={formValidState}
-        openState={openState}
-      />
-
+      <Popup />
       <img
-        className={openState ? "hidden" : "hero-line"}
+        className={formOpenState ? "hidden" : "hero-line"}
         src={dottedLine}
         alt="hero line"
       />
 
       <img
-        className={openState ? "hidden" : "hero-img"}
-        src={heroImg}
+        className={formOpenState ? "hidden" : "hero-img"}
+        src={heroImg2}
         alt="AI user"
       />
 
-      <div className={`content ${openState ? "slide" : ""}`}>
+      <div className={`content ${formOpenState ? "slide" : ""}`}>
         <h1>
           Unlock the <span>Power of AI</span>
         </h1>
@@ -51,8 +43,8 @@ const Hero = () => {
         <div className="button-container">
           <button
             onClick={() => {
-              setOpenState(true);
-              popupHandler(true);
+              dispatch(formOpenHandler(true));
+              dispatch(setPopupType("interested"));
             }}
             className="primary-button"
           >
@@ -60,8 +52,8 @@ const Hero = () => {
           </button>
           <button
             onClick={() => {
-              setOpenState(false);
-              popupHandler("not-interested");
+              dispatch(formOpenHandler(false));
+              dispatch(setPopupType("not-interested"));
             }}
             className="secondary-button"
           >
@@ -69,7 +61,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <Form openState={openState} popupHandler={popupHandler} />
+      <Form />
     </main>
   );
 };

@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# AI-Books Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the AI-Books project! This repository contains the codebase for a website that promotes the new QuickBooks feature, AI-Books. The website showcases a dedicated hero section, a user-friendly form, responsive design, a dark/light mode toggle, and more.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Hero + Form Combo Component**: A captivating hero section that introduces the AI-Books feature and a form for users to learn more.
+- **Responsive Design**: The website is designed to be fully responsive and mobile-friendly for a seamless experience on various devices.
+- **Dark/Light Mode Toggle**: Users can toggle between dark and light modes, enhancing readability and user preference.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository: `git clone https://github.com/yourusername/ai-books.git`
+2. Navigate to the project directory: `cd ai-books`
+3. Install dependencies: `npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+Run the development server: `npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will start the website locally at [http://localhost:3000](http://localhost:3000).
 
-### `npm run build`
+## Colors
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project uses CSS variables to define the color scheme. Here are the color palettes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Light Theme:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Background: #EAEAEA
+- Text Primary: #343A40
+- Text Secondary: #F8F9FA
+- Accent Primary: #DD6E42
+- Accent Secondary: #4F6D7A
+- Border: #E8DAB2
+- Form Background: #4F6D7A
 
-### `npm run eject`
+**Dark Theme:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Background: #212529
+- Text Primary: #EAEAEA
+- Text Secondary: #CED4DA
+- Accent Primary: #DD6E42
+- Accent Secondary: #343A40
+- Border: #DD6E42
+- Form Background: #343A40
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React
+- Redux
+- CSS
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Issues and Resolutions
 
-## Learn More
+1. **Popup Text Data Implementation**: Dynamically populating the popup content based on user interactions was challenging. I used Redux to manage popup state and content, ensuring accurate data display.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Responsive Image Design**: Implementing responsive images that adapt to different screen sizes required careful styling. I utilized the `object-fit` property to maintain image aspect ratios.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Form Validation**: Ensuring valid user inputs and displaying appropriate messages during form submission was a concern. I implemented client-side validation and displayed relevant feedback to users.
 
-### Code Splitting
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project was developed by Bradley Owens. Special thanks to the Intuit for providing the opportunity to work on this engaging web development project.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For inquiries or questions, please contact me at [bradowens17@hotmail.com].

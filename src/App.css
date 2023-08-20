@@ -1,1 +1,51 @@
+:root {
+  --background: #eaeaea;
+  --text-primary: #343a40;
+  --text-secondary: #f8f9fa;
+  --accent-primary: #dd6e42;
+  --accent-secondary: #4f6d7a;
+  --border: #e8dab2;
+  --form-bg: #4f6d7a;
+}
+/* 
+  :root {
+    --background: #E8DAB2;
+    --text-primary: #f8f9fa;
+    --text-secondary: #eaeaea;
+    --accent-primary: #dd6e42;
+    --accent-secondary: #4f6d7a;
+    --border: #e8dab2;
+    --form-bg: #4f6d7a;
+  } */
 
+[data-theme="dark"] {
+  --background: #212529;
+  --text-primary: #eaeaea;
+  --text-secondary: #ced4da;
+  --accent-primary: #dd6e42;
+  --accent-secondary: #343a40;
+  --border: #dd6e42;
+  --form-bg: #343a40;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  background: var(--background);
+}
+
+.body-dark {
+  background-color: #212529;
+}
+
+.app {
+  color: var(--text-primary);
+  background: var(--background);
+  font-size: 0.8rem;
+  transition: 0.5 all;
+}

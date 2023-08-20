@@ -4,9 +4,9 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  max-width: 100vw;
-  /* height: 100%; */
-  height: 680px;
+  min-height: 695px;
+  /* min-height: 100vh; */
+  /* height: 695px; */
   padding: 1rem;
 }
 
@@ -39,6 +39,8 @@
   opacity: 1;
   transform: translateY(0px);
   transition: all 1s;
+  /* object-fit: contain; */
+  /* max-width: 100%; */
 }
 
 .content {
@@ -139,7 +141,7 @@ button:hover {
     width: 28rem;
     position: absolute;
     top: 0rem;
-    right: -3rem;
+    right: 0rem;
     opacity: 1;
     transform: translateY(0px);
     transition: all 1s;
@@ -178,11 +180,11 @@ button:hover {
   }
 }
 
-@media (max-width: 1116px) {
+/* @media (max-width: 1116px) {
   .hero-img {
-    right: -4rem;
+    right: 0rem;
   }
-}
+} */
 
 @media (max-width: 1032px) {
   .hero-img {
@@ -198,9 +200,9 @@ button:hover {
 
 @media (max-width: 976px) {
   .main-container {
-    height: 100%;
+    min-height: 100vh;
     flex-direction: column;
-    gap: 3rem;
+    gap: 10rem;
     justify-content: flex-start;
     align-items: center;
     /* margin-top: -10rem; */
@@ -213,7 +215,7 @@ button:hover {
     opacity: 1;
     transform: translateY(0px);
     transition: all 1s;
-    transform: rotate(-200deg);
+    transform: rotate(-230deg);
     opacity: 0.2;
   }
 
@@ -222,6 +224,7 @@ button:hover {
     top: auto;
     bottom: -18rem;
     right: 15rem;
+    top: 35%;
     width: 30rem;
     transform: translateY(-20px);
     transition: all 1s;
@@ -230,7 +233,8 @@ button:hover {
   .hero-img {
     position: absolute;
     top: auto;
-    bottom: -18rem;
+    /* bottom: -18rem; */
+    top: 35%;
     right: 15rem;
     width: 30rem;
     opacity: 1;
@@ -251,7 +255,7 @@ button:hover {
   }
 
   .slide {
-    transform: translateY(-30px);
+    transform: translateY(20px);
   }
 
   .content p {
@@ -259,18 +263,32 @@ button:hover {
   }
 }
 
+@media (max-width: 796px) {
+  .hero-line {
+    width: 25rem;
+    position: absolute;
+    top: 14rem;
+    right: 15rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+    transform: rotate(-220deg);
+    opacity: 0.2;
+  }
+}
+
 @media (max-width: 708px) {
   .content {
     width: 90%;
     gap: 1.5rem;
-    transform: translateY(140px);
+    /* transform: translateY(140px); */
     transition: transform 0.8s ease-in-out;
   }
 
   .hidden {
     position: absolute;
     top: auto;
-    bottom: -18rem;
+    top: 35%;
     right: 2rem;
     width: 30rem;
     transform: translateY(-20px);
@@ -291,8 +309,9 @@ button:hover {
 
   .hero-img {
     position: absolute;
-    top: auto;
-    bottom: -18rem;
+    /* top: auto; */
+    /* bottom: -18rem; */
+    top: 35%;
     right: 2rem;
     width: 30rem;
     opacity: 1;
@@ -308,8 +327,22 @@ button:hover {
     font-size: 0.9rem;
   }
 
-  .slide {
+  /* .slide {
     transform: translateY(-30px);
+  } */
+}
+
+@media (max-width: 558px) {
+  .hero-line {
+    width: 20rem;
+    position: absolute;
+    top: 15rem;
+    right: 8rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+    transform: rotate(-230deg);
+    opacity: 0.2;
   }
 }
 
@@ -317,7 +350,6 @@ button:hover {
   .content {
     width: 95%;
     gap: 1.5rem;
-    transform: translateY(140px);
     transition: transform 0.8s ease-in-out;
   }
 
@@ -327,10 +359,6 @@ button:hover {
 
   .content p {
     font-size: 0.8rem;
-  }
-
-  .slide {
-    transform: translateY(-30px);
   }
 
   .primary-button {
@@ -355,41 +383,7 @@ button:hover {
 }
 
 @media (max-width: 490px) {
-  .hidden {
-    position: absolute;
-    top: auto;
-    bottom: -12rem;
-    right: -3rem;
-    width: 25rem;
-    transform: translateY(-20px);
-    transition: all 1s;
-  }
-
-  .hero-line {
-    width: 20.5rem;
-    position: absolute;
-    top: 15rem;
-    right: 2rem;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 1s;
-    transform: rotate(-240deg);
-    opacity: 0.2;
-  }
-
-  .hero-img {
-    position: absolute;
-    top: auto;
-    bottom: -12rem;
-    right: -3rem;
-    width: 25rem;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 1s;
-  }
   .content {
-    align-items: start;
-    transform: translateY(140px);
     transition: transform 0.8s ease-in-out;
   }
 
@@ -398,55 +392,92 @@ button:hover {
   }
 
   .content p {
-    text-align: left;
     font-size: 0.7rem;
-  }
-
-  .slide {
-    transform: translateY(-30px);
   }
 }
 
 @media (max-width: 407px) {
+  .main-container {
+    gap: 5rem;
+  }
   .content {
-    align-items: start;
-    transform: translateY(140px);
     transition: transform 0.8s ease-in-out;
   }
 
-  .content h1 {
-    font-size: 1.5rem;
+  .hidden {
+    position: absolute;
+    top: auto;
+    top: 35%;
+    right: 2rem;
+    width: 30rem;
+    transform: translateY(-20px);
+    transition: all 1s;
   }
 
-  .content p {
-    text-align: left;
-    font-size: 0.6rem;
+  .hero-line {
+    width: 16rem;
+    position: absolute;
+    top: 11rem;
+    right: 3rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+    transform: rotate(-20deg);
+    opacity: 0.2;
   }
 
-  .slide {
-    transform: translateY(-30px);
-  }
-}
-
-@media (max-width: 404px) {
-  .content {
-    align-items: start;
-    transform: translateY(140px);
-    transition: transform 0.8s ease-in-out;
+  .hero-img {
+    position: absolute;
+    /* top: auto; */
+    /* bottom: -18rem; */
+    top: 35%;
+    right: 0rem;
+    width: 26rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
   }
 
   .content h1 {
     font-size: 1.3rem;
   }
 
-  .content p {
-    text-align: left;
+  /* .content p {
     font-size: 0.6rem;
+  } */
+
+  /* .slide {
+    transform: translateY(-30px);
+  } */
+
+  .primary-button {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
   }
 
-  .slide {
-    transform: translateY(-30px);
+  .secondary-button {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
   }
+}
+
+@media (max-width: 321px) {
+  /* .content {
+    transform: translateY(140px);
+    transition: transform 0.8s ease-in-out;
+  } */
+
+  .content h1 {
+    font-size: 1.2rem;
+  }
+
+  .content p {
+    font-size: 0.5rem;
+  }
+
+  /* .slide {
+    transform: translateY(-30px);
+  } */
 
   .primary-button {
     font-size: 0.7rem;

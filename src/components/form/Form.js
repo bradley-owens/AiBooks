@@ -1,55 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useDispatch } from "react-redux";
+import { useActions } from "../../hooks/useActions";
 import "./Form.css";
-const Form = ({ openState, popupHandler }) => {
+
+const Form = () => {
+  const dispatch = useDispatch();
+  const { formOpenState, firstNameError, lastNameError, emailError } =
+    useAppSelector((state) => state.website);
+  const { submitForm } = useActions();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastname] = useState("");
   const [email, setEmail] = useState("");
-  const [formError, setFormError] = useState("");
-
-  const validateEmail = (email) => {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailPattern.test(email);
-  };
-
-  const validateName = (name) => {
-    const namePattern = /^[A-Za-z]+$/;
-    return namePattern.test(name);
-  };
 
   const submitFormHandler = (event) => {
     event.preventDefault();
-
-    const validationRules = [
-      {
-        check: validateName(firstName),
-        message: "First name must contain only letters.",
-      },
-      {
-        check: validateName(lastName),
-        message: "Last name must contain only letters.",
-      },
-      {
-        check: validateEmail(email),
-        message: "Please provide a valid email address.",
-      },
-    ];
-
-    const errors = validationRules
-      .filter((rule) => !rule.check)
-      .map((rule) => rule.message);
-
-    if (errors.length > 0) {
-      setFormError(errors.join(" -- "));
-    } else {
-      popupHandler(true, true, firstName);
-      setFirstName("");
-      setLastname("");
-      setEmail("");
-    }
+    dispatch(submitForm({ firstName, lastName, email }));
   };
 
   useEffect(() => {
-    if (openState) {
+    if (formOpenState) {
       setTimeout(() => {
         document.querySelector(".container").classList.add("open");
       }, 300);
@@ -58,7 +29,7 @@ const Form = ({ openState, popupHandler }) => {
         document.querySelector(".container").classList.remove("open");
       }, 10);
     }
-  }, [openState]);
+  }, [formOpenState]);
 
   return (
     <div className={"container"}>
@@ -66,23 +37,26 @@ const Form = ({ openState, popupHandler }) => {
       <form onSubmit={submitFormHandler}>
         <label>First Name</label>
         <input
+          className={firstNameError ? "error" : ""}
+          type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
         <label>Last Name</label>
-        <input value={lastName} onChange={(e) => setLastname(e.target.value)} />
+        <input
+          className={lastNameError ? "error" : ""}
+          type="text"
+          value={lastName}
+          onChange={(e) => setLastname(e.target.value)}
+        />
         <label>Email Address</label>
         <input
+          className={emailError ? "error" : ""}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
         />
         <button type="submit">Submit</button>
-        {formError && (
-          <p style={{ color: "red", textAlign: "center", fontSize: "0.7rem" }}>
-            {formError}
-          </p>
-        )}
       </form>
     </div>
   );
