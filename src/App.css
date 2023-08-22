@@ -33,6 +33,8 @@
 }
 
 .app {
+  margin: 0 auto;
+  max-width: 1990px;
   color: var(--text-primary);
   background: var(--background);
   font-size: 0.8rem;

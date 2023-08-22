@@ -12,15 +12,18 @@ const Hero = () => {
   const dispatch = useDispatch();
   const { formOpenState } = useAppSelector((state) => state.website);
   const { formOpenHandler, setPopupType } = useActions();
+  const isLargeScreen = window.innerWidth >= 1576;
 
   return (
     <main className="main-container">
       <Popup />
-      <img
-        className={formOpenState ? "hidden" : "hero-line"}
-        src={dottedLine}
-        alt="AI-Books comms line"
-      />
+      {!isLargeScreen && (
+        <img
+          className={formOpenState ? "hidden" : "hero-line"}
+          src={dottedLine}
+          alt="AI-Books comms line"
+        />
+      )}
 
       <img
         className={formOpenState ? "hidden" : "hero-img"}

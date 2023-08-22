@@ -20,11 +20,14 @@ const Form = () => {
   };
 
   useEffect(() => {
+    // Resets form inputs
     if (!firstNameError && !lastNameError && !emailError) {
       setFirstName("");
       setLastName("");
       setEmail("");
     }
+
+    // Timeout to change class for smoother transition of opening and closing form
     if (formOpenState) {
       setTimeout(() => {
         document.querySelector(".container").classList.add("open");

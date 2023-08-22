@@ -2,3 +2,10 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+@media (min-width: 1576px) {
+  .fas {
+    font-size: 2.3rem;
+    cursor: pointer;
+  }
+}

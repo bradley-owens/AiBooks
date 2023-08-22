@@ -1,4 +1,5 @@
 header {
+  max-width: 1900px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -47,6 +48,60 @@ header .nav-button {
   display: none;
   color: var(--text-primary);
   font-size: 1.5rem;
+}
+
+@media (min-width: 1576px) {
+  header {
+    max-width: 1900px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 12rem;
+    z-index: 100;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  header h2 {
+    font-size: 2.2rem;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border: none;
+    font-size: 1.4rem;
+    padding-bottom: 0.3rem;
+  }
+
+  a:hover {
+    cursor: pointer;
+    border-bottom: 1px solid var(--text-primary);
+    transition: all 0.2s;
+  }
+
+  header .nav-button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 974px) {

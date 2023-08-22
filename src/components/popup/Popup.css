@@ -24,6 +24,36 @@
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
+@media (min-width: 1576px) {
+  .popup {
+    font-size: 1.2rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    top: 4rem;
+    left: 28rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .popup.open {
+    font-size: 1.2rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    top: 4rem;
+    left: 28rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  }
+}
+
 @media (max-width: 1302px) {
   .popup {
     left: 16rem;

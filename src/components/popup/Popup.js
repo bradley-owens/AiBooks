@@ -11,8 +11,8 @@ const Popup = () => {
   const isMobileScreen = window.innerWidth <= 970;
 
   useEffect(() => {
+    // Timer to close popup after 3 seconds
     let popupTimeout;
-
     if (popupType || formSubmitted) {
       setShowPopup(true);
 
