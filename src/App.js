@@ -1,24 +1,14 @@
-import "./App.css";
 import Hero from "./components/hero/Hero";
-import useLocalStorage from "use-local-storage";
 import Navigation from "./components/navigation/Navigation";
-import React, { useState } from "react";
+import { useAppSelector } from "./hooks/useAppSelector";
+import "./App.css";
 
 function App() {
-  const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
-  // const [theme, setTheme] = useState("light");
-
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-
-    var element = document.body;
-    element.classList.toggle("body-dark");
-  };
+  const { theme } = useAppSelector((state) => state.website);
 
   return (
     <div className="app" data-theme={theme}>
-      <Navigation switchTheme={switchTheme} />
+      <Navigation />
       <Hero />
     </div>
   );

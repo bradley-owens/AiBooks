@@ -8,7 +8,7 @@
   left: 28rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .popup.open {
@@ -21,30 +21,18 @@
   left: 28rem;
   opacity: 1;
   transform: translateY(0px);
-  transition: all 0.5s ease-out;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
 @media (max-width: 1302px) {
   .popup {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    top: 9rem;
     left: 16rem;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .popup.open {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    top: 9rem;
     left: 16rem;
     opacity: 1;
     transform: translateY(0px);
@@ -90,7 +78,6 @@
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -141,7 +128,6 @@
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -163,8 +149,6 @@
     gap: 1rem;
     top: 20rem;
     left: 26%;
-
-    /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
 }
@@ -180,7 +164,6 @@
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -218,7 +201,6 @@
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -246,18 +228,17 @@
   }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 490px) {
   .popup {
     position: absolute;
     font-size: 0.6rem;
-    top: 8rem;
+    top: 3rem;
     left: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -266,7 +247,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    top: 8rem;
+    top: 3rem;
     left: 4rem;
 
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
@@ -281,7 +262,6 @@
     left: 14%;
     top: 20rem;
 
-    /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
 }
@@ -290,14 +270,13 @@
   .popup {
     position: absolute;
     font-size: 0.6rem;
-    top: 8rem;
+    top: 3rem;
     left: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -306,7 +285,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    top: 8rem;
+    top: 3rem;
     left: 4rem;
 
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
@@ -321,7 +300,6 @@
     left: 14%;
     top: 20rem;
 
-    /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
   }
 }
@@ -330,14 +308,13 @@
   .popup {
     position: absolute;
     font-size: 0.6rem;
-    top: 8rem;
+    top: 3rem;
     left: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -346,7 +323,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    top: 8rem;
+    top: 3rem;
     left: 4rem;
 
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
@@ -359,24 +336,28 @@
     justify-content: center;
     gap: 0.5rem;
     left: 14%;
-    top: 16.5rem;
+    top: 20rem;
 
-    /* opacity: 1; */
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+}
+
+@media (max-width: 390px) {
+  .mobile-form {
+    top: 18.5rem;
   }
 }
 @media (max-width: 370px) {
   .popup {
     position: absolute;
     font-size: 0.5rem;
-    top: 8rem;
+    top: 3rem;
     left: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translateY(20px);
     transition: all 0.5s;
-    /* animation: fadeDown 0.3s ease-in-out 0.5s forwards; */
   }
 
   .mobile {
@@ -385,7 +366,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    top: 8rem;
+    top: 3rem;
     left: 2.5rem;
 
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
@@ -398,9 +379,13 @@
     justify-content: center;
     gap: 0.5rem;
     left: 14%;
-    top: 15rem;
-
-    /* opacity: 1; */
+    top: 20rem;
     animation: fadeUp 0.3s ease-in-out 0.5s forwards;
+  }
+}
+
+@media (max-width: 320px) {
+  .mobile-form {
+    top: 17rem;
   }
 }

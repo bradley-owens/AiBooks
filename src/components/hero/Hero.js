@@ -4,16 +4,14 @@ import Popup from "../popup/Popup";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useDispatch } from "react-redux";
 import { useActions } from "../../hooks/useActions";
-
-import "./Hero.css";
-import heroImg2 from "../../images/hero-img.png";
+import heroImg from "../../images/hero-img.png";
 import dottedLine from "../../images/dotted-line.png";
+import "./Hero.css";
 
 const Hero = () => {
   const dispatch = useDispatch();
   const { formOpenState } = useAppSelector((state) => state.website);
   const { formOpenHandler, setPopupType } = useActions();
-  // const formOpenState = useSelector((state) => state.website.formOpenState);
 
   return (
     <main className="main-container">
@@ -21,16 +19,16 @@ const Hero = () => {
       <img
         className={formOpenState ? "hidden" : "hero-line"}
         src={dottedLine}
-        alt="hero line"
+        alt="AI-Books comms line"
       />
 
       <img
         className={formOpenState ? "hidden" : "hero-img"}
-        src={heroImg2}
-        alt="AI user"
+        src={heroImg}
+        alt="AI-Books Assistant"
       />
 
-      <div className={`content ${formOpenState ? "slide" : ""}`}>
+      <section className={`content ${formOpenState ? "slide" : ""}`}>
         <h1>
           Unlock the <span>Power of AI</span>
         </h1>
@@ -60,7 +58,7 @@ const Hero = () => {
             Not interested
           </button>
         </div>
-      </div>
+      </section>
       <Form />
     </main>
   );

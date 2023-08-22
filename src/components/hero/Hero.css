@@ -5,8 +5,6 @@
   align-items: center;
   gap: 2rem;
   min-height: 695px;
-  /* min-height: 100vh; */
-  /* height: 695px; */
   padding: 1rem;
 }
 
@@ -39,8 +37,6 @@
   opacity: 1;
   transform: translateY(0px);
   transition: all 1s;
-  /* object-fit: contain; */
-  /* max-width: 100%; */
 }
 
 .content {
@@ -180,12 +176,6 @@ button:hover {
   }
 }
 
-/* @media (max-width: 1116px) {
-  .hero-img {
-    right: 0rem;
-  }
-} */
-
 @media (max-width: 1032px) {
   .hero-img {
     width: 22rem;
@@ -205,7 +195,6 @@ button:hover {
     gap: 10rem;
     justify-content: flex-start;
     align-items: center;
-    /* margin-top: -10rem; */
   }
   .hero-line {
     width: 25rem;
@@ -233,7 +222,6 @@ button:hover {
   .hero-img {
     position: absolute;
     top: auto;
-    /* bottom: -18rem; */
     top: 35%;
     right: 15rem;
     width: 30rem;
@@ -281,7 +269,6 @@ button:hover {
   .content {
     width: 90%;
     gap: 1.5rem;
-    /* transform: translateY(140px); */
     transition: transform 0.8s ease-in-out;
   }
 
@@ -309,8 +296,6 @@ button:hover {
 
   .hero-img {
     position: absolute;
-    /* top: auto; */
-    /* bottom: -18rem; */
     top: 35%;
     right: 2rem;
     width: 30rem;
@@ -326,10 +311,6 @@ button:hover {
   .content p {
     font-size: 0.9rem;
   }
-
-  /* .slide {
-    transform: translateY(-30px);
-  } */
 }
 
 @media (max-width: 558px) {
@@ -383,12 +364,26 @@ button:hover {
 }
 
 @media (max-width: 490px) {
+  .main-container {
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
   .content {
+    width: 100%;
+    gap: 1.5rem;
+    transform: translateY(50px);
+
     transition: transform 0.8s ease-in-out;
   }
-
+  .slide {
+    transform: translateY(-30px);
+  }
   .content h1 {
-    font-size: 1.7rem;
+    font-size: 3rem;
+    text-align: center;
   }
 
   .content p {
@@ -397,9 +392,6 @@ button:hover {
 }
 
 @media (max-width: 407px) {
-  .main-container {
-    gap: 5rem;
-  }
   .content {
     transition: transform 0.8s ease-in-out;
   }
@@ -428,8 +420,6 @@ button:hover {
 
   .hero-img {
     position: absolute;
-    /* top: auto; */
-    /* bottom: -18rem; */
     top: 35%;
     right: 0rem;
     width: 26rem;
@@ -439,16 +429,8 @@ button:hover {
   }
 
   .content h1 {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
   }
-
-  /* .content p {
-    font-size: 0.6rem;
-  } */
-
-  /* .slide {
-    transform: translateY(-30px);
-  } */
 
   .primary-button {
     font-size: 0.7rem;
@@ -462,22 +444,9 @@ button:hover {
 }
 
 @media (max-width: 321px) {
-  /* .content {
-    transform: translateY(140px);
-    transition: transform 0.8s ease-in-out;
-  } */
-
-  .content h1 {
-    font-size: 1.2rem;
-  }
-
   .content p {
     font-size: 0.5rem;
   }
-
-  /* .slide {
-    transform: translateY(-30px);
-  } */
 
   .primary-button {
     font-size: 0.7rem;

@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const websiteInitialState = {
+  theme: "light",
   formOpenState: false,
   firstName: "",
   lastName: "",
   email: "",
-  formValid: false,
   formSubmitted: false,
   popupType: "entry",
   firstNameError: false,
@@ -17,6 +17,11 @@ const websiteSlice = createSlice({
   name: "website",
   initialState: websiteInitialState,
   reducers: {
+    switchTheme(state) {
+      state.theme = state.theme === "light" ? "dark" : "light";
+      var element = document.body;
+      element.classList.toggle("body-dark");
+    },
     formOpenHandler(state, action) {
       state.formOpenState = action.payload;
     },
@@ -61,22 +66,30 @@ const websiteSlice = createSlice({
       });
 
       if (errors.length > 0) {
-        state.firstName = "";
-        state.lastName = "";
-        state.email = "";
-        state.formSubmitted = true;
-        state.formValid = false;
-        state.popupType = "invalid";
-        state.firstNameError = errors.includes("firstName");
-        state.lastNameError = errors.includes("lastName");
-        state.emailError = errors.includes("email");
+        return {
+          ...state,
+          firstName: "",
+          lastName: "",
+          email: "",
+          formSubmitted: true,
+          popupType: "invalid",
+          firstNameError: errors.includes("firstName"),
+          lastNameError: errors.includes("lastName"),
+          emailError: errors.includes("email"),
+        };
       } else {
-        state.firstName = data.firstName;
-        state.lastName = data.lastName;
-        state.email = data.email;
-        state.formSubmitted = true;
-        state.formValid = true;
-        state.popupType = "valid";
+        return {
+          ...state,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          formSubmitted: true,
+          popupType: "valid",
+          firstNameError: false,
+          lastNameError: false,
+          emailError: false,
+          formOpenState: false,
+        };
       }
     },
   },

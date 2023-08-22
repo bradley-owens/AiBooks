@@ -11,7 +11,7 @@ const Form = () => {
   const { submitForm } = useActions();
 
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastname] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
   const submitFormHandler = (event) => {
@@ -20,6 +20,11 @@ const Form = () => {
   };
 
   useEffect(() => {
+    if (!firstNameError && !lastNameError && !emailError) {
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+    }
     if (formOpenState) {
       setTimeout(() => {
         document.querySelector(".container").classList.add("open");
@@ -29,36 +34,45 @@ const Form = () => {
         document.querySelector(".container").classList.remove("open");
       }, 10);
     }
-  }, [formOpenState]);
+  }, [formOpenState, firstNameError, lastNameError, emailError]);
 
   return (
-    <div className={"container"}>
-      <h1>Learn More about AI-Books</h1>
+    <section className={"container"}>
+      <h1>Register</h1>
       <form onSubmit={submitFormHandler}>
-        <label>First Name</label>
-        <input
-          className={firstNameError ? "error" : ""}
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <label>Last Name</label>
-        <input
-          className={lastNameError ? "error" : ""}
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastname(e.target.value)}
-        />
-        <label>Email Address</label>
-        <input
-          className={emailError ? "error" : ""}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-        />
+        <div className="input-container">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            id="firstName"
+            name="firstName"
+            className={firstNameError ? "error" : ""}
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            id="lastName"
+            name="lastName"
+            className={lastNameError ? "error" : ""}
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <label htmlFor="email">Email Address</label>
+          <input
+            id="email"
+            name="email"
+            className={emailError ? "error" : ""}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+          />
+        </div>
+
         <button type="submit">Submit</button>
       </form>
-    </div>
+    </section>
   );
 };
 

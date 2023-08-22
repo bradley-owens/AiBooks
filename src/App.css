@@ -4,19 +4,8 @@
   --text-secondary: #f8f9fa;
   --accent-primary: #dd6e42;
   --accent-secondary: #4f6d7a;
-  --border: #e8dab2;
-  --form-bg: #4f6d7a;
+  --border: #4f6d7a;
 }
-/* 
-  :root {
-    --background: #E8DAB2;
-    --text-primary: #f8f9fa;
-    --text-secondary: #eaeaea;
-    --accent-primary: #dd6e42;
-    --accent-secondary: #4f6d7a;
-    --border: #e8dab2;
-    --form-bg: #4f6d7a;
-  } */
 
 [data-theme="dark"] {
   --background: #212529;
@@ -25,7 +14,6 @@
   --accent-primary: #dd6e42;
   --accent-secondary: #343a40;
   --border: #dd6e42;
-  --form-bg: #343a40;
 }
 
 * {
@@ -37,6 +25,7 @@
 
 .app-wrapper {
   background: var(--background);
+  transition: 0.5s all;
 }
 
 .body-dark {
